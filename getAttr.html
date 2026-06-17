@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="ptod-pic">
+    <img
+      src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQjs1SL6xdULMFeshC0ytf3I2xXxmmZtMXphwMcKWrY0SbMO2YUn9LisyeEextCCLqZs5OMWLfNu2IDUzZ6_sdKqOpZE9sUXSqO-T2C4Ty10TM3i057VnD17dDRAKIlNIQgTlxYH5r2fw&usqp=CAc"
+      alt="LEGO 프로젝트 헤일메리" id="lego" width="200" height="200" onclick="displaySrc()">
+    <p id="name">상품명 : LEGO 프로젝트 헤일메리</p>
+    <p id="price">가격 : 159,900원</p>
+    <p id="delivery">배송비 : 3,000원</p>
+    <p>(50,000원 이상 구매시 무료)</p>
+    <p id="earn"></p>
+    <button>장바구니 담기</button>
+    <a href="">상세 설명 보기</a>
+  </div>
+  <script>
+    const priceText = document.getElementById("price").innerText;
+    const price = Number(priceText.replace(/[^0-9]/g, ""));
+    const earn = Math.floor(price * 0.02);
+
+    document.getElementById("earn").innerText =
+      `적립금 : ${earn.toLocaleString()}원 (2%)`;
+
+
+    function displaySrc() {
+      var lego = document.querySelector("#lego");
+      alert("이미지 소스 : " + lego.getAttribute("src"));
+    }
+  </script>
+</body>
+
+</html>
